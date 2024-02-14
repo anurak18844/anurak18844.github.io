@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Sriracha&display=swap');
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #b7b7a4;
+    font-family:  "Caveat", "Sriracha";
+}
+.img1{
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+
+    
+}
+
+.set_img1{
+    width: 200px;
+    height: 200px;
+}
+
+.luv-card{
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform: perspective(2000px);
+    transition: .5s;
+    
+}
+
+.card-front{
+    position: relative;
+    background-color: #e9dfd1;
+    width: 300px;
+    height: 300px;
+    transform-origin: left;
+    transition: .5s;
+    box-shadow: inset 30px 10px 100px rgba(0, 0, 0, .1), 0 0 50ppx rgba(0, 0, 0, .1);
+
+}
+
+.card-inside{
+    position: absolute;
+    background-color: #e9dfd1;
+    width: 300px;
+    height: 300px;
+    z-index: -2;
+    left: 0;
+    top: 0;
+    box-shadow: inset 30px 10px 100px rgba(0, 0, 0, .1), 0 0 50ppx rgba(0, 0, 0, .1);
+}
+
+.luv-card:hover{
+    transform: perspective(2000px) rotate(2deg);
+}
+
+.luv-card:hover .card-front{
+    transform: rotateY(-160deg);
+    box-shadow: 0 10px 100px rgba(0, 0, 0, .1);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.luv-card:hover .img2{
+    display: none;
+}
+
+.luv-card:hover .text{
+    display: none;
+}
+
+.luv-card:hover .img1{
+    display: block;
+    transition-delay: 250ms;
+    opacity: 1;
+}
+
+.content{
+    margin-top: 35px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.name{
+    margin-top: 20px;
+    position: absolute;
+    right: 45px;
+}
+
+@media screen and (max-width: 800px) {
+    .set_img1{
+        width: 100px;
+        height: 100px;
+    }
+
+    .card-front{
+        width: 200px;
+        height: 200px;
+        font-size: 10px;
+    }
+
+    .card-inside{
+        font-size: 10px;
+        width: 200px;
+        height: 200px;
+    }
+
+    
+}
